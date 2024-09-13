@@ -1,0 +1,350 @@
+/** 基础样式定义 **/
+view,
+scroll-view,
+swiper,
+match-media,
+movable-area,
+movable-view,
+cover-view,
+cover-image,
+icon,
+text,
+rich-text,
+progress,
+button,
+checkboxe,
+ditor,
+form,
+input,
+label,
+picker,
+picker-view,
+radio,
+slider,
+switch,
+textarea,
+navigator,
+audio,
+camera,
+image,
+video,
+live-player,
+live-pusher,
+map,
+canvas,
+web-view,
+:before,
+:after {
+  box-sizing: border-box;
+}
+/* 隐藏scroll-view的滚动条 */
+::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
+  height: 0 !important;
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+// 超出省略,最多5行
+@for $i from 1 through 5 {
+  .text-ellipsis-#{$i} {
+    // vue下，单行和多行显示省略号需要单独处理
+    @if $i == "1" {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    } @else {
+      display: -webkit-box !important;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-all;
+      -webkit-line-clamp: $i;
+      -webkit-box-orient: vertical !important;
+    }
+  }
+}
+
+view {
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+}
+.u-inline-flex {
+  display: inline-flex;
+}
+.u-flex-stretch {
+  flex-direction: row;
+  align-items: stretch !important;
+}
+/** 尺寸基础定义 **/
+.w100 {
+  width: 100vw;
+}
+.h100 {
+  width: 100vh;
+}
+.w-100 {
+  width: 100%;
+}
+/** 基础颜色定义 **/
+.main-color {
+  color: $base-color;
+}
+.main-font-color {
+  color: $main-font-color;
+}
+.second-font-color {
+  color: $second-font-color;
+}
+.third-font-color {
+  color: $third-font-color;
+}
+.fourth-font-color {
+  color: $fourth-font-color;
+}
+.seems-font-color {
+  color: $seems-font-color;
+}
+.black-color {
+  color: $black-color;
+}
+.white-color {
+  color: $white-color;
+}
+.brand-color {
+  color: $brand-color;
+}
+
+/** 基础字体定义 **/
+.fz-11 {
+  font-size: 24rpx;
+  transform: scale(0.9);
+}
+@for $i from 12 through 36 {
+  .fz-#{$i} {
+    font-size: ($i * 2) + rpx;
+  }
+}
+/** 基础间距定义 **/
+@for $i from 4 through 40 {
+  .pd-#{$i} {
+    padding: 0 ($i * 2) + rpx;
+  }
+  .mg-#{$i} {
+    margin: 0 ($i * 2) + rpx;
+  }
+}
+
+@for $i from 0 through 100 {
+  .pdt-#{$i} {
+    padding-top: ($i * 2) + rpx !important;
+  }
+  .pdb-#{$i} {
+    padding-bottom: ($i * 2) + rpx !important;
+  }
+  .pdr-#{$i} {
+    padding-right: ($i * 2) + rpx !important;
+  }
+  .pdl-#{$i} {
+    padding-left: ($i * 2) + rpx !important;
+  }
+  .mgt-#{$i} {
+    margin-top: ($i * 2) + rpx !important;
+  }
+  .mgb-#{$i} {
+    margin-bottom: ($i * 2) + rpx !important;
+  }
+  .mgr-#{$i} {
+    margin-right: ($i * 2) + rpx !important;
+  }
+  .mgl-#{$i} {
+    margin-left: ($i * 2) + rpx !important;
+  }
+}
+
+/** 基础定位定义 **/
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+@for $i from 0 through 50 {
+  .z-index-#{$i} {
+    z-index: $i;
+  }
+}
+.align-right {
+  text-align: right;
+}
+.align-left {
+  text-align: left;
+}
+.align-center {
+  text-align: center;
+}
+.fb {
+  font-weight: 600;
+}
+.fb-700 {
+  font-weight: 700;
+}
+.fn {
+  font-weight: normal;
+}
+
+@for $i from 0 through 24 {
+  .radius#{$i} {
+    border-radius: ($i * 2) + rpx;
+  }
+}
+.radius50 {
+  border-radius: 50%;
+}
+
+/** 其余组件自定义样式 **/
+.u-image {
+  display: inline-flex;
+}
+.no-wrap {
+  white-space: nowrap;
+}
+.line {
+  height: 20rpx;
+  background: #f9f9f9;
+}
+.white-bg {
+  background: $white-color;
+}
+.black-bg {
+  background: $black-color;
+}
+.common-bg {
+  background: $common-background;
+}
+.common-card {
+  padding: 30rpx;
+  border-radius: 16rpx;
+  background-color: $white-color;
+}
+
+/** 重复样式 */
+.common-page {
+  // #ifndef MP-WEIXIN
+  height: calc(100vh - 150rpx);
+  // #ifdef
+  // #ifdef MP-WEIXIN
+  height: 100vh;
+  // #ifdef
+  overflow-y: hidden;
+  background: $common-background;
+  position: relative;
+  .linear-bg {
+    position: absolute;
+    width: 100%;
+    height: 31vh;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    background: $linear-background;
+  }
+  .common-box {
+    position: relative;
+    z-index: 1;
+  }
+}
+.common-card {
+  background: $white-color;
+  border-radius: 24rpx;
+}
+.top-nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin: auto;
+  color: #000;
+  text-align: center;
+  &-title {
+    display: block;
+    max-width: 50vw;
+    margin: auto;
+    font-weight: bold;
+  }
+}
+
+.calender-top {
+  flex-wrap: wrap;
+  &-title {
+    font-weight: bold;
+  }
+  .close-calender {
+    position: absolute;
+    left: 30rpx;
+    top: 40rpx;
+  }
+  &-info {
+    background: #fef8f3;
+    color: $base-color;
+    padding: 12rpx 20rpx;
+  }
+}
+.view-detail {
+  &-content {
+    padding: 20rpx 30rpx;
+    .view-detail-top {
+      padding: 20rpx 0;
+      .fz-14 {
+        &:first-child {
+          padding-right: 30rpx;
+        }
+        &:last-child {
+          padding-left: 30rpx;
+        }
+      }
+      .dashed-line {
+        flex: 1;
+        border-bottom: 1rpx dashed #cacaca;
+      }
+    }
+  }
+}
+.sticky-box {
+  width: 100%;
+}
+.overflow-auto {
+  overflow: auto;
+}
+.inline {
+  display: inline;
+}
+.strong {
+  font-weight: bold;
+}
+.em {
+  font-style: oblique;
+}
+/** 0.5px的底边边框 */
+.thin-btm-line {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    border-bottom: 1rpx solid #f2f2f2;
+    transform: scaleY(0.5);
+  }
+}
+/** 0.5px边框 */
+.thin-line {
+  border: 1rpx solid #f2f2f2;
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+
+.border-color-cacaca {
+  border-color: #cacaca !important;
+}

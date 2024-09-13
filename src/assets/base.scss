@@ -1,0 +1,25 @@
+@import "@/uni_modules/vk-uview-ui/theme.scss";
+/** 主色 **/
+$base-color: #ff6633;
+/** 中性色/页面标题 */
+$title-color: #0e0e0e;
+/** 主要文字颜色 **/
+$main-font-color: #181818;
+/** 二级文字颜色 **/
+$second-font-color: #323232;
+/** 三级级文字颜色 **/
+$third-font-color: #6f6f6f;
+/** 中性色/四级文字|占位符 **/
+$fourth-font-color: #aeaeae;
+/** 若文字颜色 **/
+$seems-font-color: #999999;
+/** 品牌色/次要色/链接色|头部背景 */
+$brand-color: #1790ff;
+/** 黑色 **/
+$black-color: #000000;
+/** 白色 **/
+$white-color: #ffffff;
+/** 默认背景颜色 */
+$common-background: #f6f6f6;
+/** 渐变背景 */
+$linear-background: linear-gradient(170deg, #ffe4da 0%, rgba(243, 255, 218, 0.5) 50%, rgba(255, 255, 255, 0.27) 100%);

@@ -1,0 +1,71 @@
+/*
+ * @Author: mawenlong
+ * @LastEditors: 马文龙 214170716@qq.com
+ * @Date: 2023-05-18 10:42:17
+ * @LastEditTime: 2024-09-13 16:20:14
+ * @Description:
+ */
+{
+  "pages": [
+    /** 首页 */
+    {
+      "name": "Index",
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "Uni-Frame",
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": true
+      },
+      "meta": {
+        "anchor": true, // 是否是锚点页
+        "anchorQuery": "{\"from\": \"Index\"}" // 锚点数据
+      }
+    },
+    {
+      "name": "Owner",
+      "path": "pages/owner/index",
+      "style": {
+        "navigationBarTitleText": "Uni-Frame",
+        "navigationStyle": "custom"
+      }
+    }
+  ],
+  // 分包
+  "subPackages": [
+    /** 示例页 */
+    {
+      "root": "template",
+      "pages": [
+        {
+          "name": "Template",
+          "path": "template/index",
+          "style": {
+            "navigationBarTitleText": "模板页",
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "name": "Example",
+          "path": "example/index",
+          "style": {
+            "navigationBarTitleText": "示例页",
+            "navigationStyle": "custom"
+          }
+        }
+      ]
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-frame",
+    "navigationBarBackgroundColor": "#F2F2F2",
+    "backgroundColor": "#F2F2F2",
+    "navigationStyle": "default",
+    "renderingMode": "seperated",
+    "pageOrientation": "portrait",
+    "app-plus": {
+      "popGesture": "none",
+      "bounce": "none"
+    }
+  }
+}
